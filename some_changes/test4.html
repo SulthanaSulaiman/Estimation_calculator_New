@@ -428,6 +428,7 @@
             description.innerHTML = tooltipData;
 
             document.getElementById('' + unitColId + '').innerHTML = unit_val;
+            document.getElementById('' + unitCostColId + '').style.textAlign="center";
 
             document.getElementById('' + unitCostColId + '').innerHTML = '$' + unit_cost + '';
 
@@ -435,6 +436,8 @@
             var units_data = '<input type="number" min="0"  id="units_' + rowId.id + '" value="0"  onkeyup="if(this.value<0){this.value= this.value * -1}"  onchange=" displayTotal(' + rowId.id + ',' + unit + ',' + unit_cost + ');">';
 
             document.getElementById('' + unitsColId + '').innerHTML = units_data;
+            document.getElementById('' + totalColId + '').style.textAlign="right";
+            document.getElementById('' + totalColId + '').style.paddingRight="25px";
             document.getElementById('' + totalColId + '').innerHTML = '$0.00';
         }
 
@@ -579,12 +582,15 @@
 
             document.getElementById('' + unitColId + '').innerHTML = unit_val;
 
+            document.getElementById('' + unitCostColId + '').style.textAlign="center";
             document.getElementById('' + unitCostColId + '').innerHTML = '$' + unit_cost + '';
 
             var unitsColId = '' + rowId.id + 'c3';
             var units_data = '<input type="number" min="0"  id="units_' + rowId.id + '" value="0"  onkeyup="if(this.value<0){this.value= this.value * -1}"  onchange=" displayTotal1(' + rowId.id + ',' + unit + ',' + unit_cost + ');">';
 
             document.getElementById('' + unitsColId + '').innerHTML = units_data;
+            document.getElementById('' + totalColId + '').style.textAlign="right";
+            document.getElementById('' + totalColId + '').style.paddingRight="25px";
             document.getElementById('' + totalColId + '').innerHTML = '$0.00';
         }
 
@@ -693,8 +699,8 @@
                     <th style="width:25%">Type</th>
                     <th style="width:15%">Units</th>
                     <th style="width:10%">Unit</th>
-                    <th style="width:10%">Unit Cost</th>
-                    <th style="width:10%">Total</th>
+                    <th style="width:10%;text-align:center;">Unit Cost</th>
+                    <th style="width:10%;text-align:center;">Total</th>
                 </thead>
             </table>
 
@@ -741,7 +747,7 @@
                         <td style="width:25%"></td>
                         <td style="width:15%"></td>
                         <td style="width:10%"></td>
-                        <td style="width:10%"><b>Total Cost</b></td>
+                        <td style="width:10%;text-align:right;"><b>Total Cost</b></td>
                         <td style="width:10%" id="grandtot"></td>
                     </tr>
                 </tbody>
@@ -749,7 +755,7 @@
         </div>
         <br>
         <br>
-
+        
         <!--------Add,Delete,Estimate Buttons----------->
         <div class="row">
             <div class="container">
